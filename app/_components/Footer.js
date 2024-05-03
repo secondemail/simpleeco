@@ -3,9 +3,11 @@ import React,{useState,useEffect} from 'react'
 import { useUser } from "@clerk/clerk-react";
 import Image from 'next/image';
 import Review from './Review';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const { user } = useUser();
+  const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   useEffect(() => {
     if(window.location.href.toString().includes('sign-in') || window.location.href.toString().includes('sign-up')){
@@ -13,7 +15,7 @@ const Footer = () => {
     }else{
       setIsLoggedIn(false)
     }
-  },[])
+  },[pathname])
 
   return !isLoggedIn&& (
     <footer className="bg-gray-100 mt-5">
