@@ -9,9 +9,11 @@ import { CartContext } from '../_context/CartContext';
 import { getUserCart } from '../_utila/CartApi';
 import Cart from './Cart';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const { user } = useUser();
+  const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [openCart, setOpenCart] = useState(false); 
   const { cart, setCart } = useContext(CartContext);
@@ -21,7 +23,7 @@ const Header = () => {
     }else{
       setIsLoggedIn(false)
     }
-  }, []) 
+  }, [pathname]) 
 
   useEffect(() => {
     user&&getCartItems()

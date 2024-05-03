@@ -13,7 +13,7 @@ export default function Page() {
           />
 
           <div className="hidden lg:relative lg:block lg:p-12">
-            <a className="block text-white" href="#">
+            <a className="block text-white" href="/">
               <span className="sr-only">Home</span>
               <Image src='/IMG_20240429_142206.png' width={250} height={100} alt="logo45sa" />
             </a>
