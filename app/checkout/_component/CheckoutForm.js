@@ -52,7 +52,7 @@ const CheckoutForm = ({ amount }) => {
       clientSecret,
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000/payment-sucess",
+        return_url: "https://simpleeco.vercel.app/payment-sucess",
       },
     });
   };
